@@ -17,7 +17,7 @@ export default {
   data() {
     return {
       todos: [
-        { id: 1, text: 'buy a car', checked: false },
+        { id: 1, text: 'buy a car', checked: true },
         { id: 2, text: 'play game', checked: false }
       ]
     }
