@@ -3,7 +3,9 @@
     <h1 class="text-center">Todo App</h1>
     <input type="text" class="w-100 p-2" placeholder="Type todo">
     <hr>
-    <Todo v-for="todo in todos" :key="todo.id"></Todo>
+    <Todo v-for="todo in todos"
+          :key="todo.id"
+          :todo="todo" />
   </div>
 </template>
 <script>
