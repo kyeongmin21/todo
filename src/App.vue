@@ -8,7 +8,8 @@
     <hr>
     <Todo v-for="todo in todos"
           :key="todo.id"
-          :todo="todo"/>
+          :todo="todo"
+          @toggle-checkbox="toggleCheckbox"/>
   </div>
 </template>
 <script>
@@ -35,6 +36,9 @@ export default {
         checked: false
       });
       this.clearText = '';
+    },
+    toggleCheckbox({id, checked}) {
+      console.log(id, checked)
     }
   }
 }
