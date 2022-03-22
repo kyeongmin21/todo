@@ -42,7 +42,7 @@ export default {
       const index = this.todos.findIndex(todo => {
         return todo.id === id;
       })
-      this.
+      this.todos[index].checked = checked;
     }
 
   }

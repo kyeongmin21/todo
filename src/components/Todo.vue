@@ -4,7 +4,11 @@
     <input type="checkbox"
            :checked="todo.checked"
            @change="toggleCheckbox">
-    <span class="ml-3" >{{ todo.text }}</span>
+    <span class="ml-3"
+          :class="todo.checked ? 'text-muted' : '' "
+          :style="todo.checked ? 'text-decoration: line-through' : '' ">
+          {{ todo.text }}
+    </span>
   </div>
 </template>
 
@@ -19,7 +23,7 @@ export default {
   },
   methods: {
     toggleCheckbox(e) {
-      this.$emit('toggleCheckbox', {
+      this.$emit('toggle-checkbox', {
         id: this.todo.id,
         checked: e.target.checked
       })
