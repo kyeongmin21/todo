@@ -38,8 +38,13 @@ export default {
       this.clearText = '';
     },
     toggleCheckbox({id, checked}) {
-      console.log(id, checked)
+      // console.log(id, checked)
+      const index = this.todos.findIndex(todo => {
+        return todo.id === id;
+      })
+      this.
     }
+
   }
 }
 </script>
