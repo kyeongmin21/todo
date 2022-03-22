@@ -12,7 +12,7 @@
           :style="todo.checked ? 'text-decoration: line-through' : '' ">
           {{ todo.text }}
     </span>
-    <button class="btn btn-danger btn-sm">삭제</button>
+    <button class="btn btn-danger btn-sm" @click="clickDelete">삭제</button>
   </div>
 </template>
 
@@ -32,6 +32,9 @@ export default {
         checked: e.target.checked
       })
     },
+    clickDelete() {
+      this.$emit('click-delete', this.todo.id)
+    }
   }
 }
 </script>
