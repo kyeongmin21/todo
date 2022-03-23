@@ -10,11 +10,11 @@
   </div>
 </template>
 <script>
-import Todo from '@/components/Todo'
+import TodoList from "@/components/TodoList"
 
 export default {
   components: {
-    Todo
+    TodoList
   },
   data() {
     return {

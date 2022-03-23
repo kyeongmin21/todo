@@ -10,8 +10,13 @@
 </template>
 
 <script>
+import Todo from '@/components/Todo'
+
 export default {
   name: "TodoList",
+  components: {
+    Todo
+  },
   props: {
     todo: {
       type: Array,
