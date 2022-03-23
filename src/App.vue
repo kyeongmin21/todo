@@ -6,11 +6,7 @@
            placeholder="Type todo"
            @keyup.enter="addTodo">
     <hr>
-    <Todo v-for="todo in todos"
-          :key="todo.id"
-          :todo="todo"
-          @toggle-checkbox="toggleCheckbox"
-          @click-delete="deleteTodo"/>
+
   </div>
 </template>
 <script>
