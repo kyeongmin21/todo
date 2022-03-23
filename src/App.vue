@@ -6,7 +6,10 @@
            placeholder="Type todo"
            @keyup.enter="addTodo">
     <hr>
-
+    <TodoList :todos="todos"
+              @toggle-checkbox="toggleCheckbox"
+              @click-delete="deleteTodo">
+    </TodoList>
   </div>
 </template>
 <script>

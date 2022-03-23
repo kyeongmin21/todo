@@ -18,12 +18,18 @@ export default {
     Todo
   },
   props: {
-    todo: {
+    todos: {
       type: Array,
       required: true,
     }
   },
   methods: {
+    toggleCheckbox(value) {
+      this.$emit('toggle-checkbox', value)
+    },
+    deleteTodo(todoId) {
+      this.$emit('click-delete',todoId)
+    }
   }
 }
 </script>
