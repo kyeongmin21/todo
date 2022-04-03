@@ -12,8 +12,7 @@
       {{ todoList.text }}
     </span>
     <button class="btn btn-danger btn-sm"
-            @click="clickDelete">
-      delete
+            @click="clickDelete">delete
     </button>
   </div>
 </template>
@@ -35,7 +34,7 @@ export default {
       })
     },
     clickDelete() {
-      this.$emit('click-delete', this.todo.id)
+      this.$emit('click-delete', this.todoList.id)
     }
   }
 }
