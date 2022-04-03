@@ -38,12 +38,10 @@ export default {
       this.clearText = ''
     },
     toggleCheckbox({id, checked}) {
-      console.log(id, checked)
       const index = this.todos.findIndex( todo => {
         return todo.id === id;
       })
-
-      console.log('index------',index)
+      this.todos[index].checked = checked;
     }
   }
 }
