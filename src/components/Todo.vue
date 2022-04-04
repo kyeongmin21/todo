@@ -4,7 +4,9 @@
     <input type="checkbox"
            :checked="todoList.checked"
            @change="toggleCheckbox">
-    <span class="ml-3">{{ todoList.text }}</span>
+    <span class="ml-3"
+          :class="todoList.checked ? 'text-muted' : '' "
+          :style="todoList.checked ? 'text-decoration:line-through' : ''">{{ todoList.text }}</span>
   </div>
 </template>
 
