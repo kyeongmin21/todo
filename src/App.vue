@@ -43,9 +43,7 @@ export default {
       this.todos[index].checked = checked
     },
     clickDelete(id) {
-
      this.todos = this.todos.filter(todo => todo.id !== id)
-      console.log(id)
     }
   }
 }
