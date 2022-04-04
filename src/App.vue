@@ -9,7 +9,8 @@
 
     <Todo v-for="todo in todos" :key="todo.id"
           :todoList="todo"
-          @toggle-checkbox="toggleCheckbox"></Todo>
+          @toggle-checkbox="toggleCheckbox"
+          @click-delete="clickDelete"></Todo>
   </div>
 </template>
 
@@ -40,6 +41,11 @@ export default {
         return todo.id === id
       })
       this.todos[index].checked = checked
+    },
+    clickDelete(id) {
+
+     this.todos = this.todos.filter(todo => todo.id !== id)
+      console.log(id)
     }
   }
 }
