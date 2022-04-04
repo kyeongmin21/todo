@@ -1,15 +1,17 @@
 <template>
-  <div id="app" class="container">
+  <div id="app">
     <h1 class="text-center">Todo App</h1>
-    <input type="text" class="w-100 p-2"
-           placeholder="todo list"
+    <input type="text"
+           placeholder="text"
+           class="w-100 p-2"
            @keyup.enter="addTodo"
-           v-model="cleanText">
+          v-model="clearText">
     <hr>
-    <Todo v-for="todo in todos"
-          :key="todo.id"
+    <Todo v-for="todo in todos" :key="todo.id"
           :todoList="todo"
-          @toggle-checkbox="toggleCheckbox"></Todo>
+          @toggle-checkbox="toggleCheckbox">
+
+    </Todo>
   </div>
 </template>
 
@@ -19,27 +21,28 @@ export default {
   components: {Todo},
   data() {
     return {
-      cleanText: '',
+      clearText: '',
       todos: [
-        { id: 1, text: 'study hard', checked: true} ,
-        { id: 2, text: 'buy a car', checked: false },
+        { id: 1, checked: true, text: 'study hard'},
+        { id: 2, checked: false, text: 'buy a car'}
       ]
     }
   },
   methods: {
-    addTodo(event) {
-      this.todos.push(
-      { id: Math.random(), text: event.target.value, checked: false }
-      )
-      this.cleanText =''
+    addTodo(e) {
+      this.todos.push({
+        id: Math.random(),
+        checked: false,
+        text: e.target.value
+      });
+      this.clearText = ''
     },
     toggleCheckbox({id, checked}) {
-      const index = this.todos.findIndex( todo => {
+      const index = this.todos.findIndex(todo =>{
         return todo.id === id
       })
       this.todos[index].checked = checked
     }
-
   }
 }
 </script>

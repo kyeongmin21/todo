@@ -3,10 +3,10 @@
     {{ todoList.checked}}
     <input type="checkbox"
            :checked="todoList.checked"
-           @change="toggleCheckbox">
+            @change="toggleCheckbox">
     <span class="ml-3"
           :class="todoList.checked ? 'text-muted' : '' "
-          :style="todoList.checked ? 'text-decoration:line-through' : ''">{{ todoList.text }}</span>
+          :style="todoList.checked ? 'text-decoration: line-through' : ''">{{ todoList.text }}</span>
   </div>
 </template>
 
@@ -16,6 +16,7 @@ export default {
   props: {
     todoList: {
       type: Object,
+      required: true,
     }
   },
   methods: {
