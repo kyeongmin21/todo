@@ -8,7 +8,8 @@
     <hr>
 
     <Todo v-for="todo in todos" :key="todo.id"
-          :todoList="todo"></Todo>
+          :todoList="todo"
+          @toggle-checkbox="toggleCheckbox"></Todo>
   </div>
 </template>
 
@@ -33,6 +34,12 @@ export default {
         text: event.target.value
       })
       this.clearText = ''
+    },
+    toggleCheckbox({id, checked}) {
+      const index = this.todos.findIndex(todo => {
+        return todo.id === id
+      })
+      this.todos[index].checked = checked
     }
   }
 }
