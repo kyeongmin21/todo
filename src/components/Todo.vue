@@ -2,7 +2,8 @@
   <div>
     {{ todoList.checked}}
     <input type="checkbox"
-           :checked="todoList.checked">
+           :checked="todoList.checked"
+           @change="toggleCheckbox">
     <span class="ml-3">{{ todoList.text }}</span>
   </div>
 </template>
@@ -16,7 +17,12 @@ export default {
     }
   },
   methods: {
-
+    toggleCheckbox(event) {
+      this.$emit('toggle-checkbox', {
+        id: this.todoList.id,
+        checked: event.target.checked
+      })
+    }
   }
 }
 </script>
