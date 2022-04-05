@@ -11,7 +11,7 @@
           :style="todoList.checked ? 'text-decoration: line-through' : '' ">
           {{ todoList.text }}
     </span>
-    <button class="btn btn-danger">delete</button>
+    <button class="btn btn-danger" @click="clickDelete">delete</button>
   </div>
 </template>
 
@@ -30,6 +30,9 @@ export default {
         id: this.todoList.id,
         checked: event.target.checked
       })
+    },
+    clickDelete() {
+      this.$emit('click-delete', this.todoList.id)
     }
   }
 }

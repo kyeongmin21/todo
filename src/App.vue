@@ -8,7 +8,8 @@
     <hr>
     <Todo v-for="todo in todos" :key="todo.id"
           :todoList="todo"
-          @toggle-checkbox="toggleCheckbox">
+          @toggle-checkbox="toggleCheckbox"
+          @click-delete="clickDelete">
 
     </Todo>
   </div>
@@ -44,6 +45,9 @@ export default {
         return todo.id === id
       });
       this.todos[index].checked = checked
+    },
+    clickDelete(id) {
+      this.todos = this.todos.filter(todo => todo.id !== id)
     }
   }
 }
