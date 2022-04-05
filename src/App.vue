@@ -3,7 +3,7 @@
     <h1 class="text-center">Todo List</h1>
     <input type="text" class="w-100 p-2"
            placeholder="텍스트를 입력해주세요."
-           @keyup.enter="todoAdd"
+           @keyup.enter="addTodo"
            v-model="clearText">
     <hr>
     <Todo v-for="todo in todos" :key="todo.id"
@@ -30,12 +30,13 @@ export default {
     }
   },
   methods: {
-    todoAdd(event) {
-      this.todos.push({
+    addTodo(event) {
+      this.todos.push(
+        {
         id: Math.random(),
         text: event.target.value,
-        checked: false
-      });
+        checked: false}
+      )
       this.clearText = ''
     },
     toggleCheckbox({id, checked}) {
