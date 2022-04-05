@@ -1,39 +1,14 @@
 <template>
-  <div class="d-flex mb-2">
-    <div>
-      {{ todoList.checked }}
-      <input type="checkbox" :checked="todoList.checked" @change="toggleCheckbox">
-    </div>
+  <div>
 
-    <span class="ml-2 flex-grow-1"
-          :class="todoList.checked ? 'text-muted' : '' "
-          :style="todoList.checked ? 'text-decoration: line-through' : ''">
-          {{ todoList.text}}
-    </span>
-    <button class="btn btn-danger btn-sm" @click="clickDelete">delete</button>
   </div>
 </template>
 
 <script>
 export default {
   name: "Todo",
-  props: {
-    todoList: {
-      type: Object,
-      required: true
-    }
-  },
   methods: {
-    toggleCheckbox(event) {
-      this.$emit('toggle-checkbox', {
-        id: this.todoList.id,
-        checked: event.target.checked
-      })
-    },
-    clickDelete() {
-      this.$emit('click-delete', this.todoList.id)
-    }
-  },
 
+  }
 }
 </script>
