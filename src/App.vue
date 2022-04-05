@@ -4,7 +4,10 @@
     <input type="text" class="w-100 p-2"
            placeholder="텍스트를 입력해주세요.">
     <hr>
-    <Todo v-for="todo in todos" :key="todo.id"></Todo>
+    <Todo v-for="todo in todos" :key="todo.id"
+          :todoList="todo">
+
+    </Todo>
   </div>
 </template>
 
