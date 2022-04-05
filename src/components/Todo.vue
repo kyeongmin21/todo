@@ -1,12 +1,17 @@
 <template>
-  <div>
-    {{ todoList.checked }}
-    <input type="checkbox"
-           :checked="todoList.checked"
-           @change="toggleCheckbox">
-    <span class="ml-2"
+  <div class="mb-2 d-flex">
+      <div>
+      <input type="checkbox"
+             :checked="todoList.checked"
+             @change="toggleCheckbox">
+      </div>
+
+    <span class="ml-2 flex-grow-1"
           :class="todoList.checked ? 'text-muted' : '' "
-          :style="todoList.checked ? 'text-decoration: line-through' : '' ">{{ todoList.text }}</span>
+          :style="todoList.checked ? 'text-decoration: line-through' : '' ">
+          {{ todoList.text }}
+    </span>
+    <button class="btn btn-danger">delete</button>
   </div>
 </template>
 
