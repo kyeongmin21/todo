@@ -7,7 +7,8 @@
            v-model="clearText">
     <hr>
     <Todo v-for="todo in todos" :key="todo.id"
-          :todoList="todo">
+          :todoList="todo"
+          @toggle-checkbox="toggleCheckbox">
 
     </Todo>
   </div>
@@ -36,6 +37,12 @@ export default {
         checked: false
       });
       this.clearText = ''
+    },
+    toggleCheckbox({id, checked}) {
+      const index = this.todos.findIndex(todo => {
+        return todo.id === id
+      });
+      this.todos[index].checked = checked
     }
   }
 }
